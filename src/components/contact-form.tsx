@@ -62,7 +62,7 @@ export function ContactForm() {
 
   return (
     <form
-      className="grid gap-4 rounded-lg border border-line bg-panel/90 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.28)] md:p-7"
+      className="neon-surface grid gap-4 rounded-[2rem] p-5 md:p-7"
       onSubmit={handleSubmit}
     >
       <label className="hidden">
@@ -77,7 +77,7 @@ export function ContactForm() {
             name="name"
             required
             autoComplete="name"
-            className="min-h-12 rounded-lg border border-line bg-white/[0.045] px-3 text-foreground outline-none transition focus:border-green/70"
+            className="min-h-12 rounded-2xl border border-white/12 bg-white/[0.045] px-4 text-foreground outline-none transition focus:border-green/70"
           />
         </label>
         <label className="grid gap-2 text-sm font-semibold text-muted">
@@ -87,7 +87,7 @@ export function ContactForm() {
             type="email"
             required
             autoComplete="email"
-            className="min-h-12 rounded-lg border border-line bg-white/[0.045] px-3 text-foreground outline-none transition focus:border-green/70"
+            className="min-h-12 rounded-2xl border border-white/12 bg-white/[0.045] px-4 text-foreground outline-none transition focus:border-green/70"
           />
         </label>
       </div>
@@ -97,7 +97,7 @@ export function ContactForm() {
         <select
           name="projectType"
           required
-          className="min-h-12 rounded-lg border border-line bg-panel-strong px-3 text-foreground outline-none transition focus:border-green/70"
+          className="min-h-12 rounded-2xl border border-white/12 bg-panel-strong px-4 text-foreground outline-none transition focus:border-green/70"
         >
           <option value="">Select one</option>
           {services.map((service) => (
@@ -112,7 +112,7 @@ export function ContactForm() {
           <select
             name="budgetRange"
             required
-            className="min-h-12 rounded-lg border border-line bg-panel-strong px-3 text-foreground outline-none transition focus:border-green/70"
+            className="min-h-12 rounded-2xl border border-white/12 bg-panel-strong px-4 text-foreground outline-none transition focus:border-green/70"
           >
             <option value="">Select one</option>
             {budgetRanges.map((range) => (
@@ -125,7 +125,7 @@ export function ContactForm() {
           <select
             name="timeline"
             required
-            className="min-h-12 rounded-lg border border-line bg-panel-strong px-3 text-foreground outline-none transition focus:border-green/70"
+            className="min-h-12 rounded-2xl border border-white/12 bg-panel-strong px-4 text-foreground outline-none transition focus:border-green/70"
           >
             <option value="">Select one</option>
             {timelines.map((timeline) => (
@@ -141,14 +141,14 @@ export function ContactForm() {
           name="message"
           rows={6}
           required
-          className="resize-y rounded-lg border border-line bg-white/[0.045] px-3 py-3 text-foreground outline-none transition focus:border-green/70"
+          className="resize-y rounded-2xl border border-white/12 bg-white/[0.045] px-4 py-3 text-foreground outline-none transition focus:border-green/70"
         />
       </label>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-violet/70 bg-[linear-gradient(135deg,var(--violet),#5b8cff)] px-5 text-sm font-bold text-foreground shadow-[0_16px_48px_rgba(139,76,255,0.28)] transition hover:shadow-[0_18px_60px_rgba(139,76,255,0.36)] disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-pink/70 bg-[linear-gradient(135deg,var(--pink),var(--violet)_52%,var(--cyan))] px-5 text-sm font-bold text-foreground shadow-[0_18px_54px_rgba(240,24,159,0.28)] transition hover:shadow-[0_20px_70px_rgba(87,217,255,0.28)] disabled:cursor-not-allowed disabled:opacity-60"
       >
         <Send size={17} />
         {isSubmitting ? "Sending..." : "Send project brief"}

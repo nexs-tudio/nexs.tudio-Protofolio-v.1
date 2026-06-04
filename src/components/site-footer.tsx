@@ -6,9 +6,9 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-background/80 py-8">
       <div className="section-shell flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <Link href="/" className="inline-flex items-center gap-3 text-lg font-extrabold">
+        <Link href="/" className="font-display inline-flex items-center gap-3 text-lg font-extrabold">
           <Image
-            src="/assets/nexstudio_icon_square.png"
+            src="/assets/nexstudio_icon_black.png"
             alt=""
             width={36}
             height={36}

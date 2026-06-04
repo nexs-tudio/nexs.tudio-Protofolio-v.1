@@ -164,6 +164,25 @@ export const processSteps = [
   },
 ] as const;
 
+export const trustSignals = [
+  {
+    title: "Clear weekly progress",
+    body: "You see working screens, API progress, blockers, and next steps before the project drifts.",
+  },
+  {
+    title: "Production-first mindset",
+    body: "We plan deployment, validation, performance, and handoff from the start, not after the UI is finished.",
+  },
+  {
+    title: "Founder-friendly scope",
+    body: "We help narrow the first useful release so your budget goes into software clients can actually use.",
+  },
+  {
+    title: "Technical handoff included",
+    body: "Projects include practical notes for hosting, env vars, routes, data, and future improvements.",
+  },
+] as const;
+
 export const pricingPackages: PricingPackage[] = [
   {
     name: "Launch Site",
