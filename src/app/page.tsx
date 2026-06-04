@@ -24,84 +24,108 @@ import {
 export default function Home() {
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden px-5 pb-12 pt-32 md:pt-40">
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_38%,rgba(240,24,159,0.24),transparent_24rem),radial-gradient(circle_at_80%_52%,rgba(87,217,255,0.3),transparent_28rem),radial-gradient(circle_at_52%_20%,rgba(139,76,255,0.28),transparent_34rem),linear-gradient(90deg,rgba(3,2,7,0.97),rgba(21,5,42,0.72),rgba(3,2,7,0.96))]" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(139,76,255,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(139,76,255,0.07)_1px,transparent_1px)] bg-[size:58px_58px] [mask-image:linear-gradient(to_bottom,black,transparent_95%)]" />
-        <span className="floating-dot left-[7%] top-[48%]" />
-        <span className="floating-dot bottom-[14%] left-[28%] h-7 w-7 bg-[radial-gradient(circle,#fff,var(--pink)_38%,transparent_72%)] shadow-[0_0_34px_rgba(240,24,159,0.78)]" />
-        <span className="floating-leaf right-[8%] top-[31%]" />
-        <span className="floating-dot right-[13%] top-[70%]" />
+      <section className="relative min-h-screen overflow-hidden px-5 pb-10 pt-28 md:pt-36">
+        <video
+          aria-label="Abstract software studio background"
+          autoPlay
+          className="absolute inset-0 -z-30 h-full w-full object-cover opacity-30"
+          loop
+          muted
+          playsInline
+          poster="/assets/nexstudio_launch_post.png"
+        >
+          <source src="/assets/video/hero-flow.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_42%,rgba(139,76,255,0.34),transparent_22rem),radial-gradient(circle_at_84%_32%,rgba(87,217,255,0.16),transparent_18rem),linear-gradient(180deg,rgba(3,2,7,0.72),rgba(3,2,7,0.96)_78%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,transparent_calc(25%-1px),rgba(255,255,255,0.1)_25%,transparent_calc(25%+1px),transparent_calc(50%-1px),rgba(255,255,255,0.1)_50%,transparent_calc(50%+1px),transparent_calc(75%-1px),rgba(255,255,255,0.1)_75%,transparent_calc(75%+1px))]" />
+        <span className="floating-dot left-[48%] top-[7%]" />
+        <span className="floating-dot right-[20%] top-[18%] h-3 w-3 bg-[radial-gradient(circle,#fff,var(--pink)_38%,transparent_72%)] shadow-[0_0_34px_rgba(240,24,159,0.78)]" />
+        <span className="floating-leaf right-[7%] top-[17%]" />
 
-        <div className="section-shell relative">
-          <p className="pointer-events-none absolute left-0 top-24 -z-10 hidden select-none text-[10vw] font-extrabold leading-none text-white/[0.035] lg:block">
-            NEXS
-          </p>
-
-          <div className="grid min-h-[calc(100svh-9rem)] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="max-w-[680px]">
-              <p className="mb-5 inline-flex rounded-full border border-cyan/25 bg-white/[0.05] px-4 py-2 font-mono text-[11px] font-semibold uppercase text-green shadow-[0_0_30px_rgba(87,217,255,0.16)]">
-                Colombo software studio
-              </p>
-              <h1 className="text-5xl font-extrabold leading-[0.95] text-foreground md:text-7xl">
-                Software that works. Shipped fast.
-              </h1>
-              <p className="mt-6 max-w-[560px] text-lg leading-8 text-muted">
-                nexs.tudio builds full-stack products, APIs, dashboards, and
-                cloud-ready systems for teams that need serious delivery.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href="/contact" className="soft-pulse">
-                  Start a project
-                  <ArrowRight size={17} />
-                </ButtonLink>
-                <ButtonLink href="/work" variant="secondary">
-                  View work style
-                </ButtonLink>
+        <div className="section-shell relative grid min-h-[calc(100svh-8rem)] grid-rows-[1fr_auto]">
+          <div className="grid items-center gap-8 lg:grid-cols-[0.75fr_1.25fr_0.8fr]">
+            <div className="max-w-xs self-center">
+              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.055] backdrop-blur">
+                <Image
+                  src="/assets/nexstudio_icon_transparent.png"
+                  alt=""
+                  width={42}
+                  height={42}
+                  className="h-10 w-10 object-contain"
+                  priority
+                />
               </div>
-              <div className="mt-9 flex flex-wrap gap-3 text-sm text-muted">
-                {["Full-stack apps", "Backend APIs", "Analytics dashboards"].map(
-                  (item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 backdrop-blur"
-                    >
-                      {item}
-                    </span>
-                  )
-                )}
+              <p className="font-mono text-[11px] uppercase leading-6 text-muted">
+                We recently made this studio official. Now we build digital
+                systems for founders, teams, and growing businesses.
+              </p>
+            </div>
+
+            <div className="relative flex min-h-[430px] items-center justify-center text-center">
+              <div className="hero-orbit left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2" />
+              <div className="hero-orbit left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2" />
+              <div className="logo-object absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 opacity-80">
+                <Image
+                  src="/assets/nexstudio_icon_transparent.png"
+                  alt="nexs.tudio N mark"
+                  width={320}
+                  height={320}
+                  priority
+                  className="h-48 w-48 object-contain md:h-64 md:w-64"
+                />
+              </div>
+              <div className="relative z-10">
+                <p className="mb-6 font-mono text-xs uppercase text-green">
+                  build / ship / scale
+                </p>
+                <h1 className="font-display text-6xl font-extrabold leading-none text-foreground md:text-8xl lg:text-9xl">
+                  nexs<span className="text-violet">.</span>tudio
+                </h1>
+                <ButtonLink
+                  href="/contact"
+                  className="soft-pulse mx-auto mt-8 h-24 w-24 px-4 text-center text-xs uppercase"
+                >
+                  Start
+                  <br />
+                  Project
+                </ButtonLink>
               </div>
             </div>
 
-            <div className="relative flex min-h-[500px] items-center justify-center lg:justify-end">
-              <div className="hero-orbit left-[6%] top-[4%] h-[520px] w-[520px]" />
-              <div className="hero-orbit left-[20%] top-[18%] h-[350px] w-[350px]" />
-              <div className="absolute right-0 top-8 hidden rounded-full bg-[linear-gradient(135deg,var(--pink),var(--violet),var(--cyan))] p-px lg:block">
-                <div className="rounded-full bg-background/75 px-4 py-2 font-mono text-[11px] uppercase text-muted backdrop-blur">
-                  build / ship / scale
-                </div>
+            <aside className="self-end pb-8 lg:self-center lg:pb-0">
+              <p className="mb-5 text-3xl font-extrabold leading-tight md:text-4xl">
+                Be part of something built right.
+              </p>
+              <p className="max-w-sm text-sm leading-7 text-muted">
+                Premium interfaces, clean backend systems, dashboards, APIs,
+                and deployment support in one focused software studio.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <ButtonLink href="/work" variant="secondary" className="min-h-10 px-4 text-xs">
+                  Explore work
+                </ButtonLink>
+                <ButtonLink href="/services" variant="ghost" className="min-h-10 px-0 text-xs">
+                  Scroll to explore
+                  <ArrowRight size={14} />
+                </ButtonLink>
               </div>
+            </aside>
+          </div>
 
-              <article className="relative flex h-[460px] w-full max-w-[520px] items-center justify-center">
-                <div className="logo-ring logo-ring-one" />
-                <div className="logo-ring logo-ring-two" />
-                <div className="logo-ring logo-ring-three" />
-                <div className="logo-orbital-shadow" />
-                <div className="logo-object">
-                  <Image
-                    src="/assets/nexstudio_icon_transparent.png"
-                    alt="nexs.tudio N mark"
-                    width={420}
-                    height={420}
-                    priority
-                    className="h-72 w-72 object-contain md:h-[22rem] md:w-[22rem]"
-                  />
-                </div>
-                <div className="absolute -bottom-1 left-1/2 z-10 w-[min(100%,420px)] -translate-x-1/2 rounded-full border border-white/12 bg-background/45 px-5 py-3 text-center backdrop-blur-xl">
-                  <p className="font-mono text-xs uppercase text-green">
-                    Brand-led engineering
-                  </p>
-                </div>
-              </article>
+          <div className="grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[0.78fr_1fr_0.8fr]">
+            <h2 className="text-4xl font-extrabold leading-none md:text-5xl">
+              Who we are?
+            </h2>
+            <p className="max-w-lg text-base leading-8 text-muted">
+              We create software products that look polished, feel simple to
+              use, and stay practical to maintain after launch.
+            </p>
+            <div className="grid grid-cols-3 gap-2 text-center font-mono text-[11px] uppercase text-muted">
+              {["Apps", "APIs", "Dashboards"].map((item) => (
+                <span key={item} className="rounded-full border border-white/12 bg-white/[0.04] px-3 py-2">
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </div>
