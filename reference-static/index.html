@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>nexs.tudio | Software Engineering Studio</title>
+    <meta
+      name="description"
+      content="nexs.tudio builds full-stack web apps, APIs, analytics dashboards, and scalable cloud-ready software for growing teams."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="nav" data-nav>
+        <a class="brand" href="#top" aria-label="nexs.tudio home">
+          <img src="assets/nexstudio_icon_square.png" alt="" />
+          <span>nexs<span>.</span>tudio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#process">Process</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="nav-cta" href="#contact">Start a project</a>
+        <button class="menu-button" data-menu-button aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </header>
+
+      <main id="top">
+        <section class="hero section-band">
+          <video class="hero-video" autoplay muted loop playsinline poster="assets/nexstudio_launch_post.png">
+            <source src="assets/video/hero-flow.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-grid" aria-hidden="true"></div>
+          <div class="hero-content">
+            <p class="eyebrow">Colombo based software engineering studio</p>
+            <h1>Software that works. Shipped fast.</h1>
+            <p class="hero-copy">
+              We design and build full-stack products, APIs, dashboards, and cloud-ready systems for founders and businesses that need reliable software without agency noise.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#contact">Book a build call</a>
+              <a class="button secondary" href="#work">View capabilities</a>
+            </div>
+            <dl class="hero-metrics" aria-label="Studio highlights">
+              <div>
+                <dt>4</dt>
+                <dd>core build tracks</dd>
+              </div>
+              <div>
+                <dt>2-6w</dt>
+                <dd>typical MVP sprint</dd>
+              </div>
+              <div>
+                <dt>LK</dt>
+                <dd>remote friendly</dd>
+              </div>
+            </dl>
+          </div>
+          <aside class="hero-panel" aria-label="Studio stack">
+            <img src="assets/nexstudio_cover_centered.png" alt="nexs.tudio brand cover" />
+            <div class="terminal">
+              <p><span>const</span> studio = {</p>
+              <p>mission: "build",</p>
+              <p>method: "ship",</p>
+              <p>goal: "scale"</p>
+              <p>}</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="trust-strip" aria-label="Technology stack">
+          <span>React.js</span>
+          <span>Next.js</span>
+          <span>FastAPI</span>
+          <span>Python</span>
+          <span>MongoDB</span>
+          <span>Cloud APIs</span>
+          <span>Analytics</span>
+        </section>
+
+        <section class="section-band services" id="services">
+          <div class="section-heading">
+            <p class="eyebrow">What we build</p>
+            <h2>Production-focused software for teams that need momentum.</h2>
+            <p>
+              Choose a focused build track, get clear milestones, and work with a technical partner who can take the product from idea to deployment.
+            </p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card reveal">
+              <span>01</span>
+              <h3>Full-stack web applications</h3>
+              <p>Customer portals, SaaS dashboards, internal tools, booking systems, and MVPs built with clean frontend and backend architecture.</p>
+            </article>
+            <article class="service-card reveal">
+              <span>02</span>
+              <h3>API and backend systems</h3>
+              <p>REST APIs, authentication, role-based access, database design, integrations, and admin workflows that stay maintainable.</p>
+            </article>
+            <article class="service-card reveal">
+              <span>03</span>
+              <h3>Analytics dashboards</h3>
+              <p>Operational dashboards, reporting views, data pipelines, charts, exports, and automation for better daily decisions.</p>
+            </article>
+            <article class="service-card reveal">
+              <span>04</span>
+              <h3>Cloud-ready architecture</h3>
+              <p>Deployment setup, performance tuning, database hosting, monitoring basics, and scalable handoff documentation.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-band work" id="work">
+          <div class="section-heading compact">
+            <p class="eyebrow">Client-ready capabilities</p>
+            <h2>Show the kind of outcomes clients can buy.</h2>
+          </div>
+          <div class="work-grid">
+            <article class="work-feature reveal">
+              <div class="media-frame">
+                <video autoplay muted loop playsinline poster="assets/nexstudio_launch_post.png">
+                  <source src="assets/video/product-morph.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div>
+                <p class="eyebrow">MVP sprint</p>
+                <h3>Idea to usable product</h3>
+                <p>Discovery, UX structure, frontend, backend, database, and deployment in one focused build cycle.</p>
+              </div>
+            </article>
+            <article class="work-card reveal">
+              <p class="eyebrow">Business systems</p>
+              <h3>Internal dashboard</h3>
+              <p>Track users, payments, inventory, orders, or operations in one secure interface.</p>
+            </article>
+            <article class="work-card reveal">
+              <p class="eyebrow">Integrations</p>
+              <h3>API automation</h3>
+              <p>Connect forms, CRMs, payment flows, email, storage, and custom data sources.</p>
+            </article>
+            <article class="work-card reveal">
+              <p class="eyebrow">Data products</p>
+              <h3>Analytics layer</h3>
+              <p>Dashboards and reporting systems that replace messy spreadsheets and manual checking.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-band process" id="process">
+          <div class="section-heading">
+            <p class="eyebrow">How projects run</p>
+            <h2>Clear steps, weekly progress, no mystery build.</h2>
+          </div>
+          <ol class="process-list">
+            <li class="reveal">
+              <span>01</span>
+              <h3>Scope the business goal</h3>
+              <p>We define users, core flows, must-have features, data needs, and the first useful release.</p>
+            </li>
+            <li class="reveal">
+              <span>02</span>
+              <h3>Design the working system</h3>
+              <p>We map the interface, backend, database, integrations, and delivery milestones before deep build work.</p>
+            </li>
+            <li class="reveal">
+              <span>03</span>
+              <h3>Build and review weekly</h3>
+              <p>You see real progress often, test the product early, and steer priorities before wasted work builds up.</p>
+            </li>
+            <li class="reveal">
+              <span>04</span>
+              <h3>Launch with handoff</h3>
+              <p>We deploy, document, and prepare the system for support, iteration, and future scale.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section-band pricing" id="pricing">
+          <div class="section-heading compact">
+            <p class="eyebrow">Starting packages</p>
+            <h2>Simple entry points for serious builds.</h2>
+          </div>
+          <div class="pricing-grid">
+            <article class="price-card reveal">
+              <h3>Launch Site</h3>
+              <p class="price">from $350</p>
+              <p>High-end company website, responsive design, contact flow, and deployment setup.</p>
+            </article>
+            <article class="price-card featured reveal">
+              <h3>MVP Build</h3>
+              <p class="price">from $1,200</p>
+              <p>Full-stack product foundation with auth, database, dashboards, API, and production deployment.</p>
+            </article>
+            <article class="price-card reveal">
+              <h3>System Upgrade</h3>
+              <p class="price">custom</p>
+              <p>Improve existing apps with better UI, backend stability, integrations, analytics, or cloud setup.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-band contact" id="contact">
+          <div class="contact-copy">
+            <p class="eyebrow">Start the conversation</p>
+            <h2>Tell us what you want to build. We will shape the next step.</h2>
+            <p>
+              Share the business goal, timeline, and what already exists. A short, clear message is enough to start.
+            </p>
+            <div class="contact-options">
+              <a href="mailto:hello@nexs.tudio">hello@nexs.tudio</a>
+            </div>
+          </div>
+          <form class="contact-form" data-contact-form>
+            <label>
+              <span>Name</span>
+              <input name="name" autocomplete="name" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              <span>Project type</span>
+              <select name="type" required>
+                <option value="">Select one</option>
+                <option>Company website</option>
+                <option>Full-stack app</option>
+                <option>API/backend</option>
+                <option>Dashboard or data system</option>
+              </select>
+            </label>
+            <label>
+              <span>What do you need?</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button class="button primary" type="submit">Send project brief</button>
+            <p class="form-status" data-form-status aria-live="polite"></p>
+          </form>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <a class="brand" href="#top" aria-label="nexs.tudio home">
+          <img src="assets/nexstudio_icon_square.png" alt="" />
+          <span>nexs<span>.</span>tudio</span>
+        </a>
+        <p>Software engineering studio. Colombo, Sri Lanka.</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
