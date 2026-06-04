@@ -154,6 +154,24 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-7 flex flex-wrap gap-2">
+                  {service.stack.slice(0, 3).map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/12 bg-white/[0.035] px-3 py-1.5 font-mono text-[11px] text-dim transition group-hover:border-cyan/35 group-hover:text-muted"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <ButtonLink
+                  href="/services"
+                  variant="ghost"
+                  className="mt-7 min-h-0 px-0 text-sm text-green hover:text-foreground"
+                >
+                  Explore track
+                  <ArrowRight size={15} />
+                </ButtonLink>
               </article>
             </Reveal>
           ))}
@@ -233,10 +251,20 @@ export default function Home() {
                     </div>
                   </div>
                   <h3 className="mt-5 text-2xl font-extrabold">{item.title}</h3>
-                  <p className="mt-3 leading-7 text-muted">{item.summary}</p>
-                  <p className="mt-4 border-l border-pink/50 pl-4 text-sm leading-7 text-muted">
-                    {item.outcome}
-                  </p>
+                  <div className="mt-5 grid gap-4">
+                    <div>
+                      <p className="font-mono text-[11px] uppercase text-amber">
+                        Client problem
+                      </p>
+                      <p className="mt-2 text-sm leading-7 text-muted">{item.summary}</p>
+                    </div>
+                    <div className="rounded-[1.2rem] border border-pink/25 bg-pink/[0.055] p-4">
+                      <p className="font-mono text-[11px] uppercase text-pink">
+                        Business result
+                      </p>
+                      <p className="mt-2 text-sm leading-7 text-muted">{item.outcome}</p>
+                    </div>
+                  </div>
                 </article>
               </Reveal>
             ))}
@@ -299,6 +327,14 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
+                  <ButtonLink
+                    href="/contact"
+                    variant={plan.featured ? "primary" : "secondary"}
+                    className="mt-7 w-full"
+                  >
+                    Discuss {plan.name}
+                    <ArrowRight size={16} />
+                  </ButtonLink>
                 </article>
               </Reveal>
             ))}
@@ -315,11 +351,11 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
             <div>
               <h2 className="max-w-3xl text-4xl font-extrabold leading-[1.03] md:text-6xl">
-                Tell us what you want to build.
+                Ready to turn the idea into a working system?
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-                Share the business goal, timeline, and what already exists. A
-                short, clear message is enough to start.
+                Share the business goal, timeline, and what already exists. We
+                will reply with the most practical first step for your build.
               </p>
               <div className="mt-6 flex flex-wrap gap-3 text-sm text-muted">
                 {["Reply with next steps", "Scope recommendation", "Budget fit check"].map((item) => (

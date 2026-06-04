@@ -156,7 +156,7 @@ video {
   position: relative;
   z-index: 4;
   transform-style: preserve-3d;
-  animation: logo-turn 7s ease-in-out infinite;
+  animation: logo-turn 9s ease-in-out infinite;
   filter:
     drop-shadow(0 24px 42px rgba(139, 76, 255, 0.42))
     drop-shadow(0 0 46px rgba(87, 217, 255, 0.16));
@@ -184,7 +184,7 @@ video {
   width: 78%;
   height: 78%;
   border-color: rgba(240, 24, 159, 0.28);
-  animation: logo-ring-spin 12s linear infinite;
+  animation: logo-ring-spin 18s linear infinite;
 }
 
 .logo-ring-two {
@@ -192,7 +192,7 @@ video {
   height: 64%;
   border-color: rgba(87, 217, 255, 0.26);
   transform: rotateX(68deg) rotateZ(18deg);
-  animation: logo-ring-spin-alt 10s linear infinite;
+  animation: logo-ring-spin-alt 16s linear infinite;
 }
 
 .logo-ring-three {
@@ -200,7 +200,7 @@ video {
   height: 46%;
   border-color: rgba(84, 242, 181, 0.2);
   transform: rotateY(65deg) rotateZ(-26deg);
-  animation: logo-ring-spin 8s linear infinite reverse;
+  animation: logo-ring-spin 14s linear infinite reverse;
 }
 
 .logo-orbital-shadow {
@@ -265,7 +265,7 @@ video {
   }
 
   50% {
-    transform: rotateY(18deg) rotateX(-4deg) translateY(-12px);
+    transform: rotateY(14deg) rotateX(-3deg) translateY(-10px);
   }
 }
 
