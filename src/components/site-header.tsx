@@ -12,7 +12,7 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed left-1/2 top-4 z-50 w-[min(1080px,calc(100%_-_28px))] -translate-x-1/2 rounded-full border border-white/12 bg-background/48 px-3 py-2 shadow-[0_22px_70px_rgba(0,0,0,0.42),0_0_42px_rgba(240,24,159,0.1)] backdrop-blur-2xl">
+    <header className="fixed left-1/2 top-3 z-50 w-[min(1080px,calc(100%_-_20px))] -translate-x-1/2 rounded-[1.7rem] border border-white/12 bg-background/62 px-3 py-2 shadow-[0_22px_70px_rgba(0,0,0,0.42),0_0_42px_rgba(240,24,159,0.1)] backdrop-blur-2xl md:top-4 md:rounded-full">
       <div className="flex min-h-12 items-center justify-between gap-3">
         <Link
           href="/"
@@ -32,7 +32,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1 text-sm text-muted md:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1 text-sm text-muted lg:flex" aria-label="Primary navigation">
           {navItems.map((item) => {
             const active = pathname === item.href;
             return (
@@ -53,14 +53,14 @@ export function SiteHeader() {
 
         <Link
           href="/contact"
-          className="font-display hidden min-h-11 items-center justify-center rounded-full border border-pink/45 bg-[linear-gradient(135deg,rgba(240,24,159,0.22),rgba(87,217,255,0.08))] px-5 text-sm font-bold transition hover:border-cyan/50 hover:bg-white/[0.08] md:inline-flex"
+          className="font-display hidden min-h-11 items-center justify-center rounded-full border border-pink/45 bg-[linear-gradient(135deg,rgba(240,24,159,0.22),rgba(87,217,255,0.08))] px-5 text-sm font-bold transition hover:border-cyan/50 hover:bg-white/[0.08] sm:inline-flex"
         >
           Start a project
         </Link>
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/[0.04] text-foreground md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/[0.04] text-foreground lg:hidden"
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((value) => !value)}
@@ -70,7 +70,7 @@ export function SiteHeader() {
       </div>
 
       {isOpen ? (
-        <nav className="grid gap-2 pb-2 pt-3 md:hidden" aria-label="Mobile navigation">
+        <nav className="grid gap-2 pb-2 pt-3 lg:hidden" aria-label="Mobile navigation">
           {navItems.map((item) => (
             <Link
               key={item.href}

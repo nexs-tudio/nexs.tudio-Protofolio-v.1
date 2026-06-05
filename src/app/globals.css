@@ -85,6 +85,12 @@ video {
   margin-inline: auto;
 }
 
+@media (max-width: 640px) {
+  .section-shell {
+    width: min(100% - 28px, 1120px);
+  }
+}
+
 .neon-surface {
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.14);

@@ -23,7 +23,7 @@ import {
 export default function Home() {
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden px-5 pb-10 pt-28 md:pt-36">
+      <section className="relative min-h-screen overflow-hidden px-4 pb-10 pt-24 sm:px-5 md:pt-36">
         <video
           aria-label="Abstract software studio background"
           autoPlay
@@ -37,16 +37,16 @@ export default function Home() {
         </video>
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_42%,rgba(139,76,255,0.34),transparent_22rem),radial-gradient(circle_at_84%_32%,rgba(87,217,255,0.16),transparent_18rem),linear-gradient(180deg,rgba(3,2,7,0.72),rgba(3,2,7,0.96)_78%)]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,transparent_calc(25%-1px),rgba(255,255,255,0.1)_25%,transparent_calc(25%+1px),transparent_calc(50%-1px),rgba(255,255,255,0.1)_50%,transparent_calc(50%+1px),transparent_calc(75%-1px),rgba(255,255,255,0.1)_75%,transparent_calc(75%+1px))]" />
-        <div className="section-shell relative grid min-h-[calc(100svh-8rem)] grid-rows-[1fr_auto]">
-          <div className="pointer-events-none absolute left-1/2 top-0 z-10 hidden -translate-x-1/2 lg:block">
-            <div className="hero-status-pill rounded-full border border-white/12 bg-background/45 px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.14em] text-muted backdrop-blur-xl">
+        <div className="section-shell relative grid min-h-[calc(100svh-7rem)] grid-rows-[1fr_auto] lg:min-h-[calc(100svh-8rem)]">
+          <div className="pointer-events-none absolute left-1/2 top-0 z-10 hidden -translate-x-1/2 xl:block">
+            <div className="hero-status-pill max-w-[min(92vw,640px)] rounded-full border border-white/12 bg-background/45 px-5 py-2.5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-muted backdrop-blur-xl">
               <span className="text-green">Now booking focused builds</span>
               <span className="mx-3 text-white/25">/</span>
               <span>Web apps, APIs, dashboards</span>
             </div>
           </div>
-          <div className="grid items-center gap-8 lg:grid-cols-[0.75fr_1.25fr_0.8fr]">
-            <div className="max-w-xs self-center">
+          <div className="grid items-center gap-8 py-6 md:py-10 lg:grid-cols-[0.75fr_1.25fr_0.8fr] lg:py-0">
+            <div className="max-w-md self-center text-center lg:max-w-xs lg:text-left">
               <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.055] backdrop-blur">
                 <Image
                   src="/assets/nexstudio_icon_transparent.png"
@@ -63,9 +63,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="relative flex min-h-[430px] items-center justify-center text-center">
-              <div className="hero-orbit left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2" />
-              <div className="hero-orbit left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2" />
+            <div className="relative flex min-h-[340px] items-center justify-center text-center sm:min-h-[400px] lg:min-h-[430px]">
+              <div className="hero-orbit left-1/2 top-1/2 h-[310px] w-[310px] -translate-x-1/2 -translate-y-1/2 sm:h-[430px] sm:w-[430px] lg:h-[520px] lg:w-[520px]" />
+              <div className="hero-orbit left-1/2 top-1/2 h-[210px] w-[210px] -translate-x-1/2 -translate-y-1/2 sm:h-[290px] sm:w-[290px] lg:h-[330px] lg:w-[330px]" />
               <div className="logo-object absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 opacity-80">
                 <Image
                   src="/assets/nexstudio_icon_transparent.png"
@@ -73,31 +73,31 @@ export default function Home() {
                   width={320}
                   height={320}
                   priority
-                  className="h-48 w-48 object-contain md:h-64 md:w-64"
+                  className="h-36 w-36 object-contain sm:h-48 sm:w-48 md:h-64 md:w-64"
                 />
               </div>
               <div className="relative z-10">
                 <p className="mb-6 font-mono text-xs uppercase text-green">
                   build / ship / scale
                 </p>
-                <h1 className="font-display text-6xl font-extrabold leading-none text-foreground md:text-8xl lg:text-9xl">
+                <h1 className="font-display text-[clamp(3.1rem,16vw,9rem)] font-extrabold leading-none text-foreground">
                   nexs<span className="text-violet">.</span>tudio
                 </h1>
               </div>
             </div>
 
-            <aside className="self-end pb-8 lg:self-center lg:pb-0">
-              <p className="mb-5 text-3xl font-extrabold leading-tight md:text-4xl">
+            <aside className="self-end pb-6 text-center lg:self-center lg:pb-0 lg:text-left">
+              <p className="mx-auto mb-5 max-w-md text-3xl font-extrabold leading-tight md:text-4xl lg:mx-0">
                 Be part of something built right.
               </p>
-              <p className="max-w-sm text-sm leading-7 text-muted">
+              <p className="mx-auto max-w-sm text-sm leading-7 text-muted lg:mx-0">
                 Premium interfaces, clean backend systems, dashboards, APIs,
                 and deployment support in one focused software studio.
               </p>
             </aside>
           </div>
 
-          <div className="grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[0.72fr_1fr_0.9fr]">
+          <div className="grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[0.72fr_1fr] xl:grid-cols-[0.72fr_1fr_0.9fr]">
             <h2 className="text-4xl font-extrabold leading-none md:text-5xl">
               What we build
             </h2>
@@ -105,7 +105,7 @@ export default function Home() {
               We build business products that help teams sell, manage, automate,
               and understand their work without messy manual systems.
             </p>
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-3 md:col-span-2 xl:col-span-1">
               {[
                 ["Sell online", "01"],
                 ["Run smarter", "02"],
