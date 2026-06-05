@@ -17,7 +17,6 @@ import {
   pricingPackages,
   processSteps,
   services,
-  techStack,
   trustSignals,
 } from "@/content/site";
 
@@ -38,11 +37,14 @@ export default function Home() {
         </video>
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_42%,rgba(139,76,255,0.34),transparent_22rem),radial-gradient(circle_at_84%_32%,rgba(87,217,255,0.16),transparent_18rem),linear-gradient(180deg,rgba(3,2,7,0.72),rgba(3,2,7,0.96)_78%)]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,transparent_calc(25%-1px),rgba(255,255,255,0.1)_25%,transparent_calc(25%+1px),transparent_calc(50%-1px),rgba(255,255,255,0.1)_50%,transparent_calc(50%+1px),transparent_calc(75%-1px),rgba(255,255,255,0.1)_75%,transparent_calc(75%+1px))]" />
-        <span className="floating-dot left-[48%] top-[7%]" />
-        <span className="floating-dot right-[20%] top-[18%] h-3 w-3 bg-[radial-gradient(circle,#fff,var(--pink)_38%,transparent_72%)] shadow-[0_0_34px_rgba(240,24,159,0.78)]" />
-        <span className="floating-leaf right-[7%] top-[17%]" />
-
         <div className="section-shell relative grid min-h-[calc(100svh-8rem)] grid-rows-[1fr_auto]">
+          <div className="pointer-events-none absolute left-1/2 top-0 z-10 hidden -translate-x-1/2 lg:block">
+            <div className="hero-status-pill rounded-full border border-white/12 bg-background/45 px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.14em] text-muted backdrop-blur-xl">
+              <span className="text-green">Now booking focused builds</span>
+              <span className="mx-3 text-white/25">/</span>
+              <span>Web apps, APIs, dashboards</span>
+            </div>
+          </div>
           <div className="grid items-center gap-8 lg:grid-cols-[0.75fr_1.25fr_0.8fr]">
             <div className="max-w-xs self-center">
               <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.055] backdrop-blur">
@@ -81,14 +83,6 @@ export default function Home() {
                 <h1 className="font-display text-6xl font-extrabold leading-none text-foreground md:text-8xl lg:text-9xl">
                   nexs<span className="text-violet">.</span>tudio
                 </h1>
-                <ButtonLink
-                  href="/contact"
-                  className="soft-pulse mx-auto mt-8 h-24 w-24 px-4 text-center text-xs uppercase"
-                >
-                  Start
-                  <br />
-                  Project
-                </ButtonLink>
               </div>
             </div>
 
@@ -100,47 +94,42 @@ export default function Home() {
                 Premium interfaces, clean backend systems, dashboards, APIs,
                 and deployment support in one focused software studio.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <ButtonLink href="/work" variant="secondary" className="min-h-10 px-4 text-xs">
-                  Explore work
-                </ButtonLink>
-                <ButtonLink href="/services" variant="ghost" className="min-h-10 px-0 text-xs">
-                  Scroll to explore
-                  <ArrowRight size={14} />
-                </ButtonLink>
-              </div>
             </aside>
           </div>
 
-          <div className="grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[0.78fr_1fr_0.8fr]">
+          <div className="grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[0.72fr_1fr_0.9fr]">
             <h2 className="text-4xl font-extrabold leading-none md:text-5xl">
-              Who we are?
+              What we build
             </h2>
             <p className="max-w-lg text-base leading-8 text-muted">
-              We create software products that look polished, feel simple to
-              use, and stay practical to maintain after launch.
+              We build business products that help teams sell, manage, automate,
+              and understand their work without messy manual systems.
             </p>
-            <div className="grid grid-cols-3 gap-2 text-center font-mono text-[11px] uppercase text-muted">
-              {["Apps", "APIs", "Dashboards"].map((item) => (
-                <span key={item} className="rounded-full border border-white/12 bg-white/[0.04] px-3 py-2">
-                  {item}
+            <div className="grid gap-3 sm:grid-cols-3">
+              {[
+                ["Sell online", "01"],
+                ["Run smarter", "02"],
+                ["Automate work", "03"],
+              ].map(([label, index]) => (
+                <span
+                  key={label}
+                  className="group relative min-h-28 overflow-hidden rounded-[1.6rem] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.025))] p-5 shadow-[0_18px_55px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-cyan/35 hover:shadow-[0_24px_70px_rgba(87,217,255,0.13)]"
+                >
+                  <span className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--pink),var(--cyan),transparent)] opacity-70" />
+                  <span className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-cyan/10 blur-2xl transition group-hover:bg-pink/15" />
+                  <span className="relative flex items-start justify-between gap-4">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/[0.05] font-mono text-[11px] text-green">
+                      {index}
+                    </span>
+                    <span className="h-2.5 w-2.5 rounded-full bg-green shadow-[0_0_20px_rgba(84,242,181,0.8)]" />
+                  </span>
+                  <span className="relative mt-7 block font-mono text-sm uppercase tracking-[0.14em] text-green">
+                    {label}
+                  </span>
                 </span>
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="border-y border-line bg-white/[0.025] py-5">
-        <div className="section-shell flex flex-wrap gap-2">
-          {techStack.map((item) => (
-            <span
-              key={item}
-              className="rounded-full border border-white/12 bg-white/[0.035] px-3 py-2 font-mono text-xs text-muted transition hover:border-cyan/40 hover:text-foreground"
-            >
-              {item}
-            </span>
-          ))}
         </div>
       </section>
 
