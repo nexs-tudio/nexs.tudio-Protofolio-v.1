@@ -2,10 +2,6 @@ import {
   ArrowRight,
   CheckCircle2,
   ClipboardCheck,
-  Layers3,
-  Rocket,
-  ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 import Image from "next/image";
 import { ButtonLink } from "@/components/button-link";
@@ -24,18 +20,7 @@ export default function Home() {
   return (
     <>
       <section className="relative min-h-screen overflow-hidden px-4 pb-10 pt-24 sm:px-5 md:pt-36">
-        <video
-          aria-label="Abstract software studio background"
-          autoPlay
-          className="absolute inset-0 -z-30 h-full w-full object-cover opacity-30"
-          loop
-          muted
-          playsInline
-          poster="/assets/nexstudio_launch_post.png"
-        >
-          <source src="/assets/video/hero-flow.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_42%,rgba(139,76,255,0.34),transparent_22rem),radial-gradient(circle_at_84%_32%,rgba(87,217,255,0.16),transparent_18rem),linear-gradient(180deg,rgba(3,2,7,0.72),rgba(3,2,7,0.96)_78%)]" />
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_42%,rgba(139,76,255,0.34),transparent_22rem),radial-gradient(circle_at_84%_32%,rgba(87,217,255,0.16),transparent_18rem),radial-gradient(circle_at_18%_72%,rgba(240,24,159,0.12),transparent_22rem),linear-gradient(180deg,rgba(3,2,7,0.88),rgba(3,2,7,0.98)_78%)]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,transparent_calc(25%-1px),rgba(255,255,255,0.1)_25%,transparent_calc(25%+1px),transparent_calc(50%-1px),rgba(255,255,255,0.1)_50%,transparent_calc(50%+1px),transparent_calc(75%-1px),rgba(255,255,255,0.1)_75%,transparent_calc(75%+1px))]" />
         <div className="section-shell relative grid min-h-[calc(100svh-7rem)] grid-rows-[1fr_auto] lg:min-h-[calc(100svh-8rem)]">
           <div className="pointer-events-none absolute left-1/2 top-0 z-10 hidden -translate-x-1/2 xl:block">
@@ -80,8 +65,8 @@ export default function Home() {
                 <p className="mb-6 font-mono text-xs uppercase text-green">
                   build / ship / scale
                 </p>
-                <h1 className="font-display text-[clamp(3.1rem,16vw,9rem)] font-extrabold leading-none text-foreground">
-                  nexs<span className="text-violet">.</span>tudio
+                <h1 className="brand-title font-display whitespace-nowrap text-[clamp(3rem,11vw,8.25rem)] font-extrabold leading-none text-foreground">
+                  nexs<span className="brand-dot text-violet">.</span>tudio
                 </h1>
               </div>
             </div>
@@ -144,12 +129,7 @@ export default function Home() {
             <Reveal key={service.slug}>
               <article className="neon-surface group min-h-[360px] rounded-[2rem] p-7 transition duration-300 hover:-translate-y-2">
                 <div className="flex items-start justify-between gap-5">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.06] text-cyan transition group-hover:border-pink/35 group-hover:text-pink">
-                    {index === 0 ? <Layers3 size={22} /> : null}
-                    {index === 1 ? <ShieldCheck size={22} /> : null}
-                    {index === 2 ? <Sparkles size={22} /> : null}
-                    {index === 3 ? <Rocket size={22} /> : null}
-                  </div>
+                  <div className="h-px w-16 bg-[linear-gradient(90deg,var(--green),transparent)]" />
                   <span className="font-mono text-sm text-amber">
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -326,7 +306,7 @@ export default function Home() {
                 >
                   {plan.featured ? (
                     <p className="absolute right-5 top-5 rounded-full border border-pink/35 bg-pink/10 px-3 py-1.5 font-mono text-[11px] uppercase text-pink">
-                      popular
+                      recommended
                     </p>
                   ) : null}
                   <h3 className="text-2xl font-extrabold">{plan.name}</h3>
@@ -367,8 +347,8 @@ export default function Home() {
                 Ready to turn the idea into a working system?
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-                Share the business goal, timeline, and what already exists. We
-                will reply with the most practical first step for your build.
+                Contact us directly by email, WhatsApp, phone, or LinkedIn. We
+                do not collect client project details through a website form.
               </p>
               <div className="mt-6 flex flex-wrap gap-3 text-sm text-muted">
                 {["Reply with next steps", "Scope recommendation", "Budget fit check"].map((item) => (
@@ -383,7 +363,7 @@ export default function Home() {
               </div>
             </div>
             <ButtonLink href="/contact">
-              Send project brief
+              View contact details
               <ArrowRight size={17} />
             </ButtonLink>
           </div>

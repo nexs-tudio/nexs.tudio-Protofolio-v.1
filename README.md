@@ -7,8 +7,6 @@ Production Next.js website for nexs.tudio.
 - Next.js App Router
 - TypeScript
 - Tailwind CSS
-- Resend contact emails
-- Zod validation
 
 ## Run
 
@@ -21,9 +19,6 @@ npm run build
 
 Copy `.env.example` to `.env.local` and set:
 
-- `RESEND_API_KEY`
-- `CONTACT_TO_EMAIL`
-- `CONTACT_FROM_EMAIL`
 - `NEXT_PUBLIC_SITE_URL`
 
 ## Video Placement

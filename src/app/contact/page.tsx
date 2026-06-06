@@ -1,57 +1,88 @@
 import type { Metadata } from "next";
-import { ClipboardCheck } from "lucide-react";
-import { ContactForm } from "@/components/contact-form";
+import { ExternalLink, Mail, MessageCircle, Phone } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
+import { contactDetails } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Send nexs.tudio a project brief for a website, full-stack app, API, dashboard, or system upgrade.",
+    "Contact nexs.tudio by email, WhatsApp, phone, or LinkedIn for website, app, API, dashboard, and software system inquiries.",
 };
+
+const contactCards = [
+  {
+    title: "Email",
+    value: contactDetails.email,
+    href: `mailto:${contactDetails.email}`,
+    icon: Mail,
+  },
+  {
+    title: "WhatsApp",
+    value: contactDetails.whatsapp.join(" / "),
+    href: `https://wa.me/${contactDetails.whatsapp[0].replace("+", "")}`,
+    icon: MessageCircle,
+  },
+  {
+    title: "Phone",
+    value: contactDetails.phone,
+    href: `tel:${contactDetails.phone}`,
+    icon: Phone,
+  },
+  {
+    title: "LinkedIn",
+    value: "nexs.tudio company page",
+    href: contactDetails.linkedin,
+    icon: ExternalLink,
+  },
+];
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
         eyebrow="Contact"
-        title="Tell us what you want to build."
-        body="Share the business goal, timeline, budget range, and what already exists. A short, clear message is enough to start."
-        primaryHref="mailto:hello@nexs.tudio"
-        primaryLabel="Email directly"
+        title="Contact nexs.tudio directly."
+        body="We do not collect project details through a website form. Reach us through email, WhatsApp, phone, or LinkedIn so your information stays private."
+        primaryHref={`mailto:${contactDetails.email}`}
+        primaryLabel="Email us"
       />
-      <section className="section-shell grid gap-8 py-20 md:grid-cols-[0.78fr_1fr] md:py-28">
-        <div>
-          <p className="mb-4 font-mono text-xs font-semibold uppercase text-green">
-            Project inquiry
-          </p>
-          <h2 className="text-4xl font-extrabold leading-[1.05] md:text-5xl">
-            The right first message is simple.
-          </h2>
-          <p className="mt-5 leading-8 text-muted">
-            Tell us what the software should help your business do, what
-            timeline you have in mind, and whether you already have designs,
-            data, or an existing system.
-          </p>
-          <div className="mt-7 rounded-[1.5rem] border border-white/12 bg-white/[0.04] p-5">
-            <p className="font-mono text-sm text-muted">hello@nexs.tudio</p>
-          </div>
-          <div className="mt-7 grid gap-3">
-            {[
-              "We reply with the best next step.",
-              "You get a rough scope and budget fit.",
-              "If it makes sense, we plan the first release.",
-            ].map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 rounded-full border border-white/12 bg-white/[0.035] px-4 py-3 text-sm text-muted"
+      <section className="section-shell py-20 md:py-28">
+        <div className="grid gap-5 md:grid-cols-2">
+          {contactCards.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <a
+                key={item.title}
+                href={item.href}
+                target={item.title === "LinkedIn" || item.title === "WhatsApp" ? "_blank" : undefined}
+                rel={item.title === "LinkedIn" || item.title === "WhatsApp" ? "noreferrer" : undefined}
+                className="neon-surface group rounded-[2rem] p-7 transition duration-300 hover:-translate-y-1"
               >
-                <ClipboardCheck size={16} className="shrink-0 text-green" />
-                {item}
-              </div>
-            ))}
-          </div>
+                <div className="flex items-start justify-between gap-6">
+                  <div>
+                    <p className="font-mono text-xs uppercase text-green">{item.title}</p>
+                    <p className="mt-4 text-2xl font-extrabold text-foreground">
+                      {item.value}
+                    </p>
+                  </div>
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.055] text-cyan transition group-hover:border-pink/35 group-hover:text-pink">
+                    <Icon size={21} />
+                  </span>
+                </div>
+              </a>
+            );
+          })}
         </div>
-        <ContactForm />
+
+        <div className="mt-8 rounded-[2rem] border border-white/12 bg-white/[0.04] p-7">
+          <p className="font-mono text-xs uppercase text-amber">Privacy note</p>
+          <p className="mt-3 max-w-3xl leading-8 text-muted">
+            This website does not include a project/contact form and does not
+            store client project information. Please contact us directly using
+            the details above.
+          </p>
+        </div>
       </section>
     </>
   );

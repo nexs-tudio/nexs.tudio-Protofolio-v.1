@@ -185,40 +185,40 @@ export const trustSignals = [
 
 export const pricingPackages: PricingPackage[] = [
   {
-    name: "Launch Site",
-    price: "from $350",
+    name: "Basic",
+    price: "Quote after scope",
     summary:
-      "A premium company website with responsive design, conversion flow, and deployment setup.",
+      "For a clean professional website or focused landing page that introduces the business clearly.",
     features: [
-      "Single or multi-section site",
-      "Brand-aligned visual system",
-      "Contact inquiry flow",
-      "SEO and deployment basics",
+      "Responsive website design",
+      "Brand-aligned sections",
+      "Basic SEO setup",
+      "Deployment guidance",
     ],
   },
   {
-    name: "MVP Build",
-    price: "from $1,200",
+    name: "Advanced",
+    price: "Quote after scope",
     summary:
-      "A full-stack product foundation for founders and small teams ready to validate fast.",
+      "For businesses that need a full-stack product foundation, dashboard, or internal system.",
     features: [
       "Product UX structure",
       "Frontend and backend build",
-      "Database and API setup",
-      "Production deployment",
+      "API and data flow setup",
+      "Production deployment support",
     ],
     featured: true,
   },
   {
-    name: "System Upgrade",
-    price: "custom",
+    name: "Premium",
+    price: "Quote after scope",
     summary:
-      "Improve an existing app with better UX, backend stability, integrations, analytics, or cloud setup.",
+      "For larger custom systems, automation, analytics, integrations, or long-term product improvements.",
     features: [
-      "Architecture review",
-      "Performance and UX pass",
-      "API and data improvements",
-      "Maintenance roadmap",
+      "Custom architecture planning",
+      "Advanced integrations",
+      "Analytics and automation",
+      "Technical handoff support",
     ],
   },
 ];
@@ -236,3 +236,10 @@ export const timelines = [
   "1-2 months",
   "Planning ahead",
 ] as const;
+
+export const contactDetails = {
+  email: "lknexstudio@gmail.com",
+  whatsapp: ["+94721908494", "+94716253806"],
+  phone: "+94769655970",
+  linkedin: "https://www.linkedin.com/company/nexs-tudio/",
+} as const;

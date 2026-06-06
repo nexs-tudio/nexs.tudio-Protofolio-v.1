@@ -51,13 +51,6 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <Link
-          href="/contact"
-          className="font-display hidden min-h-11 items-center justify-center rounded-full border border-pink/45 bg-[linear-gradient(135deg,rgba(240,24,159,0.22),rgba(87,217,255,0.08))] px-5 text-sm font-bold transition hover:border-cyan/50 hover:bg-white/[0.08] sm:inline-flex"
-        >
-          Start a project
-        </Link>
-
         <button
           type="button"
           className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/[0.04] text-foreground lg:hidden"

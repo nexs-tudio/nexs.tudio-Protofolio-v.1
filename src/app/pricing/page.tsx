@@ -8,7 +8,7 @@ import { pricingPackages } from "@/content/site";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Starting prices for nexs.tudio launch sites, MVP builds, and system upgrades.",
+    "Basic, Advanced, and Premium nexs.tudio packages quoted after project scope.",
 };
 
 export default function PricingPage() {
@@ -16,8 +16,8 @@ export default function PricingPage() {
     <>
       <PageHero
         eyebrow="Pricing"
-        title="Starting points for serious software projects."
-        body="These packages give clients a practical entry point. Final scope depends on workflows, integrations, timeline, and deployment needs."
+        title="Choose the package level that fits your build."
+        body="We do not publish fixed prices because every project scope, timeline, and technical requirement is different. After a short discussion, we recommend the right package and quote."
       />
       <section className="section-shell py-20 md:py-28">
         <div className="grid gap-4 lg:grid-cols-3">
@@ -46,13 +46,14 @@ export default function PricingPage() {
           ))}
         </div>
         <div className="mt-10 rounded-lg border border-line bg-panel/85 p-7 md:p-9">
-          <h2 className="text-3xl font-extrabold">Need a custom build?</h2>
+          <h2 className="text-3xl font-extrabold">Need help choosing?</h2>
           <p className="mt-4 max-w-2xl leading-8 text-muted">
-            Larger dashboards, complex integrations, or existing-system upgrades
-            should be scoped after a short technical discussion.
+            Contact us directly with the business goal, timeline, and current
+            system status. We will recommend Basic, Advanced, or Premium based
+            on the real scope.
           </p>
           <ButtonLink href="/contact" className="mt-6">
-            Request a custom quote
+            Contact nexs.tudio
           </ButtonLink>
         </div>
       </section>
