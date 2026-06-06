@@ -168,6 +168,7 @@ video {
 .brand-title {
   position: relative;
   display: inline-block;
+  max-width: 100%;
   background: linear-gradient(
     90deg,
     #f7f5ff 0%,
@@ -460,5 +461,11 @@ video {
   .logo-ring-two,
   .logo-ring-three {
     animation: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-title {
+    font-size: clamp(2.45rem, 13.4vw, 3.35rem);
   }
 }

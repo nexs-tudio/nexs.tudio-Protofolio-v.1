@@ -19,10 +19,10 @@ import {
 export default function Home() {
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden px-4 pb-10 pt-24 sm:px-5 md:pt-36">
+      <section className="relative overflow-hidden px-4 pb-10 pt-24 sm:px-5 md:pt-32 lg:min-h-screen lg:pt-36">
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_42%,rgba(139,76,255,0.34),transparent_22rem),radial-gradient(circle_at_84%_32%,rgba(87,217,255,0.16),transparent_18rem),radial-gradient(circle_at_18%_72%,rgba(240,24,159,0.12),transparent_22rem),linear-gradient(180deg,rgba(3,2,7,0.88),rgba(3,2,7,0.98)_78%)]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,transparent_calc(25%-1px),rgba(255,255,255,0.1)_25%,transparent_calc(25%+1px),transparent_calc(50%-1px),rgba(255,255,255,0.1)_50%,transparent_calc(50%+1px),transparent_calc(75%-1px),rgba(255,255,255,0.1)_75%,transparent_calc(75%+1px))]" />
-        <div className="section-shell relative grid min-h-[calc(100svh-7rem)] grid-rows-[1fr_auto] lg:min-h-[calc(100svh-8rem)]">
+        <div className="section-shell relative grid gap-10 lg:min-h-[calc(100svh-8rem)] lg:grid-rows-[1fr_auto]">
           <div className="pointer-events-none absolute left-1/2 top-0 z-10 hidden -translate-x-1/2 xl:block">
             <div className="hero-status-pill max-w-[min(92vw,640px)] rounded-full border border-white/12 bg-background/45 px-5 py-2.5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-muted backdrop-blur-xl">
               <span className="text-green">Now booking focused builds</span>
@@ -30,9 +30,9 @@ export default function Home() {
               <span>Web apps, APIs, dashboards</span>
             </div>
           </div>
-          <div className="grid items-center gap-8 py-6 md:py-10 lg:grid-cols-[0.75fr_1.25fr_0.8fr] lg:py-0">
-            <div className="max-w-md self-center text-center lg:max-w-xs lg:text-left">
-              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.055] backdrop-blur">
+          <div className="grid items-center gap-8 py-4 sm:py-6 md:py-10 lg:grid-cols-[0.75fr_1.25fr_0.8fr] lg:py-0">
+            <div className="mx-auto max-w-md self-center text-center lg:mx-0 lg:max-w-xs lg:text-left">
+              <div className="mx-auto mb-7 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.055] backdrop-blur lg:mx-0">
                 <Image
                   src="/assets/nexstudio_icon_transparent.png"
                   alt=""
@@ -42,37 +42,37 @@ export default function Home() {
                   priority
                 />
               </div>
-              <p className="font-mono text-[11px] uppercase leading-6 text-muted">
+              <p className="font-mono text-[11px] uppercase leading-6 text-muted sm:text-xs lg:text-[11px]">
                 We recently made this studio official. Now we build digital
                 systems for founders, teams, and growing businesses.
               </p>
             </div>
 
-            <div className="relative flex min-h-[340px] items-center justify-center text-center sm:min-h-[400px] lg:min-h-[430px]">
-              <div className="hero-orbit left-1/2 top-1/2 h-[310px] w-[310px] -translate-x-1/2 -translate-y-1/2 sm:h-[430px] sm:w-[430px] lg:h-[520px] lg:w-[520px]" />
-              <div className="hero-orbit left-1/2 top-1/2 h-[210px] w-[210px] -translate-x-1/2 -translate-y-1/2 sm:h-[290px] sm:w-[290px] lg:h-[330px] lg:w-[330px]" />
-              <div className="logo-object absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 opacity-80">
+            <div className="relative flex min-h-[270px] items-center justify-center text-center sm:min-h-[340px] md:min-h-[390px] lg:min-h-[430px]">
+              <div className="hero-orbit left-1/2 top-1/2 h-[245px] w-[245px] -translate-x-1/2 -translate-y-1/2 sm:h-[340px] sm:w-[340px] md:h-[430px] md:w-[430px] lg:h-[520px] lg:w-[520px]" />
+              <div className="hero-orbit left-1/2 top-1/2 h-[165px] w-[165px] -translate-x-1/2 -translate-y-1/2 sm:h-[230px] sm:w-[230px] md:h-[290px] md:w-[290px] lg:h-[330px] lg:w-[330px]" />
+              <div className="logo-object absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 opacity-80 sm:top-[40%] lg:top-[42%]">
                 <Image
                   src="/assets/nexstudio_icon_transparent.png"
                   alt="nexs.tudio N mark"
                   width={320}
                   height={320}
                   priority
-                  className="h-36 w-36 object-contain sm:h-48 sm:w-48 md:h-64 md:w-64"
+                  className="h-24 w-24 object-contain sm:h-36 sm:w-36 md:h-52 md:w-52 lg:h-64 lg:w-64"
                 />
               </div>
-              <div className="relative z-10">
-                <p className="mb-6 font-mono text-xs uppercase text-green">
+              <div className="relative z-10 w-full">
+                <p className="mb-4 font-mono text-[11px] uppercase text-green sm:mb-5 sm:text-xs">
                   build / ship / scale
                 </p>
-                <h1 className="brand-title font-display whitespace-nowrap text-[clamp(3rem,11vw,8.25rem)] font-extrabold leading-none text-foreground">
+                <h1 className="brand-title font-display max-w-full whitespace-nowrap text-[clamp(2.75rem,14vw,8.25rem)] font-extrabold leading-none text-foreground">
                   nexs<span className="brand-dot text-violet">.</span>tudio
                 </h1>
               </div>
             </div>
 
-            <aside className="self-end pb-6 text-center lg:self-center lg:pb-0 lg:text-left">
-              <p className="mx-auto mb-5 max-w-md text-3xl font-extrabold leading-tight md:text-4xl lg:mx-0">
+            <aside className="mx-auto max-w-md self-center text-center lg:mx-0 lg:self-center lg:text-left">
+              <p className="mx-auto mb-4 max-w-md text-2xl font-extrabold leading-tight sm:text-3xl md:text-4xl lg:mx-0">
                 Be part of something built right.
               </p>
               <p className="mx-auto max-w-sm text-sm leading-7 text-muted lg:mx-0">
