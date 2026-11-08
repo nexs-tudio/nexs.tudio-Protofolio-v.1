@@ -63,6 +63,22 @@ export const services: Service[] = [
     stack: ["Next.js", "React", "TypeScript", "MongoDB"],
   },
   {
+    slug: "frontend-product-development",
+    title: "Frontend product development",
+    eyebrow: "Product experience",
+    summary:
+      "Fast, accessible interfaces for SaaS products, customer portals, and business platforms.",
+    details:
+      "We turn product requirements into polished, responsive interfaces with reusable components, clear interaction patterns, and dependable frontend architecture.",
+    outcomes: [
+      "Responsive interface systems",
+      "Accessible interaction patterns",
+      "Reusable component libraries",
+      "Frontend performance tuning",
+    ],
+    stack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
     slug: "api-backend-systems",
     title: "API and backend systems",
     eyebrow: "Backend",

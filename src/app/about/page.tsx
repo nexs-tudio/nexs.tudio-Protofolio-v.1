@@ -1,22 +1,45 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Layers3, Lightbulb, Rocket } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { techStack } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Studio",
   description:
-    "About nexs.tudio, a Colombo-based software engineering studio building practical products and systems.",
+    "Meet nexs.tudio, an independent Colombo-based digital studio turning business ideas into thoughtfully designed, dependable software.",
 };
+
+const studioPrinciples = [
+  {
+    title: "Understand",
+    body: "We start with your business, your people, and the problem worth solving.",
+    Icon: Lightbulb,
+    tone: "text-[#D96824] bg-[#FFF1E7]",
+  },
+  {
+    title: "Design & build",
+    body: "We bring product thinking and engineering together in one focused team.",
+    Icon: Layers3,
+    tone: "text-[#6D5BD0] bg-[#F0EDFF]",
+  },
+  {
+    title: "Move forward",
+    body: "We launch a useful first version, then help it grow with your business.",
+    Icon: Rocket,
+    tone: "text-[#0E7490] bg-[#E6F9FD]",
+  },
+] as const;
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About"
-        title="A small studio for practical, shipped software."
-        body="nexs.tudio is built around a simple promise: understand the business problem, design the system clearly, and ship software that people can actually use."
+        eyebrow="Meet the studio"
+        title="We are nexs.tudio."
+        body="We turn your business ideas into thoughtful digital experiences—bringing strategy, design, and engineering together to build software that represents your business and helps it grow."
+        animateTitle
       />
       <section className="section-shell grid gap-8 py-20 md:grid-cols-[0.85fr_1fr] md:py-28">
         <Reveal>
@@ -39,18 +62,22 @@ export default function AboutPage() {
               Technical enough for engineering, clear enough for business.
             </h2>
             <p className="mt-5 leading-8 text-muted">
-              The studio focuses on full-stack web applications, backend
-              systems, dashboards, and launch-ready cloud architecture. The goal
-              is not to add more process than needed. The goal is to remove
-              ambiguity and get the useful version live.
+              From full-stack products and customer-facing websites to
+              dashboards and backend systems, we make the complex feel clear.
+              You work directly with the founder through each step, with
+              progress you can see and decisions grounded in your goals.
             </p>
             <div className="mt-7 grid gap-4 sm:grid-cols-3">
-              {[
-                ["Build", "Product thinking plus implementation."],
-                ["Ship", "Weekly visible progress and practical launch steps."],
-                ["Scale", "Architecture that can grow without becoming messy."],
-              ].map(([title, body]) => (
-                <div key={title} className="rounded-lg border border-line bg-panel-strong p-4">
+              {studioPrinciples.map(({ title, body, Icon, tone }) => (
+                <div
+                  key={title}
+                  className="group rounded-lg border border-line bg-panel-strong p-4 transition duration-300 hover:-translate-y-1 hover:border-[#22D3EE]/60 hover:shadow-[0_12px_30px_rgba(11,27,51,0.08)]"
+                >
+                  <Icon
+                    size={20}
+                    aria-hidden="true"
+                    className={`mb-4 rounded-md p-1 ${tone} transition-transform duration-300 group-hover:scale-110`}
+                  />
                   <h3 className="font-extrabold">{title}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted">{body}</p>
                 </div>

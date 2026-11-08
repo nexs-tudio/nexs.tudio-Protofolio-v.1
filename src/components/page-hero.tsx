@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { ButtonLink } from "@/components/button-link";
+import SplitText from "@/components/SplitText";
 
 type PageHeroProps = {
   eyebrow: string;
@@ -7,6 +8,7 @@ type PageHeroProps = {
   body: string;
   primaryHref?: string;
   primaryLabel?: string;
+  animateTitle?: boolean;
 };
 
 export function PageHero({
@@ -15,6 +17,7 @@ export function PageHero({
   body,
   primaryHref = "/contact",
   primaryLabel = "Start a project",
+  animateTitle = false,
 }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-line px-5 pb-16 pt-36 md:pb-24 md:pt-44">
@@ -24,7 +27,27 @@ export function PageHero({
           {eyebrow}
         </p>
         <h1 className="max-w-5xl text-5xl font-extrabold leading-[0.96] text-foreground md:text-7xl">
-          {title}
+          {animateTitle ? (
+            <SplitText
+              text={title}
+              className="font-display"
+              effect="rise"
+              splitType="words"
+              delay={80}
+              duration={0.9}
+              staggerFrom="start"
+              trigger="view"
+              hoverEffect="none"
+              loop={false}
+              mask={false}
+              threshold={0.1}
+              rootMargin="-80px"
+              textAlign="left"
+              tag="span"
+            />
+          ) : (
+            title
+          )}
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">{body}</p>
         <ButtonLink href={primaryHref} className="mt-8">
