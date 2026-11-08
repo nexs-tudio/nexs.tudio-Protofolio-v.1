@@ -330,74 +330,85 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-shell py-20 md:py-28">
+      <section className="section-shell py-16 md:py-24">
         <SectionHeading
           compact
           eyebrow="Capability cases"
-          title="Show clients the outcomes, not just the stack."
+          title="Practical software for real operational needs."
+          animateTitle
+          titleClassName="text-2xl md:text-4xl"
         />
-        <div className="grid gap-5 lg:grid-cols-[1.08fr_0.92fr]">
-          <Reveal>
-            <article className="neon-surface h-full overflow-hidden rounded-[2.4rem]">
-              <VideoPanel
-                src="/assets/video/product-morph.mp4"
-                poster="/assets/nexstudio_launch_post.png"
-                label="Abstract product morph preview"
-                className="border-0"
-              />
-              <div className="p-8">
-                <p className="mb-3 font-mono text-xs font-semibold uppercase text-green">
-                  Featured build path
-                </p>
-                <h3 className="max-w-2xl text-4xl font-extrabold leading-tight">
-                  From idea to usable MVP without losing weeks in planning fog.
-                </h3>
-                <p className="mt-4 max-w-2xl leading-8 text-muted">
-                  Discovery, UX structure, frontend, backend, database, and
-                  deployment are shaped as one release plan. The client sees
-                  working software early and can steer priorities.
-                </p>
+        <Reveal>
+          <article className="grid overflow-hidden rounded-[1.8rem] border border-line bg-[#F7FAFC] shadow-[0_12px_36px_rgba(11,27,51,0.06)] md:grid-cols-[0.8fr_1.2fr]">
+            <VideoPanel
+              src="/assets/video/product-morph.mp4"
+              poster="/assets/nexstudio_launch_post.png"
+              label="Abstract product morph preview"
+              className="h-full min-h-56 border-0 md:min-h-80"
+            />
+            <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-green">
+                A practical first release
+              </p>
+              <h3 className="mt-3 max-w-xl text-2xl font-bold leading-tight tracking-tight text-foreground md:text-3xl">
+                From early idea to a product people can use.
+              </h3>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-muted">
+                Discovery, UX structure, frontend, backend, database, and
+                deployment come together in one clear release plan. Build and
+                review working software early, then shape the next steps around
+                what matters most.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {["Discovery", "Product UX", "Full-stack build", "Launch"].map(
+                  (phase) => (
+                    <span
+                      key={phase}
+                      className="rounded-full border border-line bg-white px-3 py-1.5 font-mono text-[10px] text-dim"
+                    >
+                      {phase}
+                    </span>
+                  ),
+                )}
               </div>
-            </article>
-          </Reveal>
-          <div className="grid gap-4">
-            {caseStudies.map((item) => (
-              <Reveal key={item.slug}>
-                <article className="neon-surface rounded-[1.8rem] p-6">
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <p className="font-mono text-xs font-semibold uppercase text-green">
-                      {item.category}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {item.stack.slice(0, 2).map((stack) => (
-                        <span
-                          key={stack}
-                          className="rounded-full border border-line bg-panel-strong px-3 py-1.5 font-mono text-[11px] text-muted"
-                        >
-                          {stack}
-                        </span>
-                      ))}
-                    </div>
+            </div>
+          </article>
+        </Reveal>
+
+        <div className="mt-10 border-y border-line">
+          {caseStudies.map((item, index) => (
+            <Reveal key={item.slug}>
+              <article className="grid gap-4 border-b border-line py-6 last:border-b-0 sm:grid-cols-[52px_minmax(0,1fr)_minmax(0,0.9fr)] sm:items-start sm:gap-6 md:py-7">
+                <span className="pt-1 font-mono text-xs tracking-[0.12em] text-[#0E7490]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-green">
+                    {item.category}
+                  </p>
+                  <h3 className="mt-1.5 text-lg font-bold tracking-tight text-foreground md:text-xl">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-muted">
+                    {item.summary}
+                  </p>
+                </div>
+                <div className="sm:pl-4">
+                  <p className="text-sm leading-6 text-muted">{item.outcome}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {item.stack.slice(0, 3).map((stack) => (
+                      <span
+                        key={stack}
+                        className="rounded-full border border-line bg-white px-2.5 py-1 font-mono text-[10px] text-dim"
+                      >
+                        {stack}
+                      </span>
+                    ))}
                   </div>
-                  <h3 className="mt-5 text-2xl font-extrabold">{item.title}</h3>
-                  <div className="mt-5 grid gap-4">
-                    <div>
-                      <p className="font-mono text-[11px] uppercase text-amber">
-                        Client problem
-                      </p>
-                      <p className="mt-2 text-sm leading-7 text-muted">{item.summary}</p>
-                    </div>
-                    <div className="rounded-[1.2rem] border border-cyan/35 bg-[#E6F9FD] p-4">
-                      <p className="font-mono text-[11px] uppercase text-pink">
-                        Business result
-                      </p>
-                      <p className="mt-2 text-sm leading-7 text-muted">{item.outcome}</p>
-                    </div>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+                </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </section>
 
