@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
 import { AudienceCards } from "@/components/audience-cards";
+import DotGrid from "@/components/DotGrid";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import RippleGrid from "@/components/RippleGrid";
@@ -19,7 +20,6 @@ import {
   pricingPackages,
   processSteps,
   services,
-  trustSignals,
 } from "@/content/site";
 
 export default function Home() {
@@ -242,22 +242,87 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-line bg-panel-strong py-20 md:py-28">
-        <div className="section-shell">
-          <SectionHeading
-            compact
-            eyebrow="Why clients choose us"
-            title="Professional delivery signals before the first call."
+      <section className="relative isolate overflow-hidden border-y border-line bg-[#F7FAFC] py-16 md:py-24">
+        <div className="pointer-events-none absolute inset-0 z-0 opacity-30" aria-hidden="true">
+          <DotGrid
+            baseColor="#3a3446"
+            activeColor="#0E7490"
+            shape="circle"
+            dotSize={5}
+            gap={18}
+            proximity={140}
+            strength={1}
+            bounce={0.6}
+            tension={0.4}
+            returnDuration={0.8}
+            shockRadius={320}
+            shockStrength={5}
+            swell={0.8}
+            stretch={0.5}
+            glow={0.5}
+            fade={0}
+            intro
+            opacity={0.3}
+            mouseInteraction
+            clickShock
           />
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {trustSignals.map((signal, index) => (
-              <Reveal key={signal.title}>
-                <article className="rounded-[1.6rem] border border-line bg-white p-6 transition hover:-translate-y-1 hover:border-cyan/50 hover:shadow-[0_12px_32px_rgba(11,27,51,0.07)]">
-                  <div className="mb-10 flex h-11 w-11 items-center justify-center rounded-full bg-[#E6F9FD] text-[#0E7490]">
-                    {index + 1}
+        </div>
+        <div className="section-shell relative z-10 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+          <div className="flex flex-col items-start">
+            <p className="mb-3 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-green">
+              Why trust us
+            </p>
+            <h2 className="max-w-lg text-3xl font-extrabold leading-[1.08] tracking-tight text-foreground md:text-4xl">
+              Thoughtful engineering, grounded in research.
+            </h2>
+            <p className="mt-5 max-w-xl text-sm leading-7 text-muted md:text-base">
+              We&apos;re a founder-led software studio—not a marketing agency
+              reselling promises. Our work is shaped by formal academic
+              training, research, and hands-on engineering, so we take time to
+              understand the problem before recommending what to build.
+            </p>
+            <a
+              href="https://sadumina-rathnayaka-prof-v1.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full border border-[#0B1B33] bg-[#0B1B33] px-5 text-sm font-bold text-white transition-colors hover:border-[#0E7490] hover:bg-[#0E7490] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0E7490]"
+            >
+              Meet the founder
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          </div>
+
+          <div className="divide-y divide-line border-y border-line bg-white/85 px-5 backdrop-blur-sm sm:px-7">
+            {[
+              {
+                number: "01",
+                title: "Academic foundation",
+                body: "A degree-backed technical perspective informs how we evaluate ideas and engineering trade-offs.",
+              },
+              {
+                number: "02",
+                title: "Research-led thinking",
+                body: "We investigate the problem and its context before settling on a solution or stack.",
+              },
+              {
+                number: "03",
+                title: "Direct founder involvement",
+                body: "You work directly with the founder—from early discovery through implementation and handoff.",
+              },
+            ].map((point) => (
+              <Reveal key={point.number}>
+                <article className="group grid gap-3 py-5 sm:grid-cols-[44px_minmax(0,1fr)] sm:gap-5 sm:py-6">
+                  <span className="pt-1 font-mono text-xs tracking-[0.12em] text-[#0E7490]">
+                    {point.number}
+                  </span>
+                  <div>
+                    <h3 className="text-base font-bold tracking-tight text-foreground transition-colors group-hover:text-[#0E7490] md:text-lg">
+                      {point.title}
+                    </h3>
+                    <p className="mt-1.5 max-w-xl text-sm leading-6 text-muted">
+                      {point.body}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-extrabold">{signal.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-muted">{signal.body}</p>
                 </article>
               </Reveal>
             ))}
