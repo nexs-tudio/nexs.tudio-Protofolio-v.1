@@ -9,6 +9,7 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
 import { AudienceCards } from "@/components/audience-cards";
 import DotGrid from "@/components/DotGrid";
+import { ProcessTimeline } from "@/components/process-timeline";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import RippleGrid from "@/components/RippleGrid";
@@ -18,7 +19,6 @@ import { VideoPanel } from "@/components/video-panel";
 import {
   caseStudies,
   pricingPackages,
-  processSteps,
   services,
 } from "@/content/site";
 
@@ -412,26 +412,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-line bg-panel-strong py-20 md:py-28">
-        <div className="section-shell">
-        <SectionHeading
-          eyebrow="How projects run"
-          title="Clear steps, weekly progress, no mystery build."
-          body="A simple delivery rhythm makes clients feel safe: scope, system plan, weekly review, launch handoff."
+      <section className="relative isolate overflow-hidden border-y border-line bg-panel-strong py-16 md:py-20">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-60 [background-image:radial-gradient(rgba(14,116,144,0.22)_1px,transparent_1px)] [background-size:24px_24px] [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)]"
+          aria-hidden="true"
         />
-        <ol className="relative grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {processSteps.map((step, index) => (
-            <Reveal key={step.title}>
-              <li className="min-h-72 rounded-[1.8rem] border border-line bg-white p-6 transition hover:-translate-y-1 hover:border-cyan/50">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-cyan/40 bg-[#E6F9FD] font-mono text-sm text-amber">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-10 text-2xl font-extrabold">{step.title}</h3>
-                <p className="mt-4 leading-7 text-muted">{step.body}</p>
-              </li>
-            </Reveal>
-          ))}
-        </ol>
+        <div className="section-shell relative z-10">
+          <SectionHeading
+            compact
+            eyebrow="How projects run"
+            title="We build more than a website."
+            body="We create a thoughtful digital representation of your business—bringing your brand, services, and customer experience together in a platform designed to earn trust and support growth. Our clear, collaborative process turns that vision into a product, step by step."
+            animateTitle
+            titleClassName="text-2xl md:text-4xl"
+            bodyClassName="text-sm leading-7 md:text-base md:leading-8"
+          />
+          <ProcessTimeline />
         </div>
       </section>
 
