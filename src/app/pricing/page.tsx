@@ -26,7 +26,7 @@ export default function PricingPage() {
               <article
                 className={
                   plan.featured
-                    ? "rounded-lg border border-violet/70 bg-[linear-gradient(135deg,rgba(139,76,255,0.18),rgba(84,242,181,0.04)),var(--panel-strong)] p-7"
+                    ? "rounded-lg border border-cyan/50 bg-[linear-gradient(135deg,#E6F9FD,#F4F8FB_60%,#FFFFFF)] p-7"
                     : "rounded-lg border border-line bg-panel/85 p-7"
                 }
               >

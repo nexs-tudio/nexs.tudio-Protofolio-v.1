@@ -50,7 +50,7 @@ export default function AboutPage() {
                 ["Ship", "Weekly visible progress and practical launch steps."],
                 ["Scale", "Architecture that can grow without becoming messy."],
               ].map(([title, body]) => (
-                <div key={title} className="rounded-lg border border-line bg-white/[0.035] p-4">
+                <div key={title} className="rounded-lg border border-line bg-panel-strong p-4">
                   <h3 className="font-extrabold">{title}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted">{body}</p>
                 </div>

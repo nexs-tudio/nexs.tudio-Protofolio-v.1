@@ -18,7 +18,7 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-line px-5 pb-16 pt-36 md:pb-24 md:pt-44">
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(139,76,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(139,76,255,0.08)_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(14,116,144,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(14,116,144,0.07)_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]" />
       <div className="section-shell">
         <p className="mb-4 font-mono text-xs font-semibold uppercase text-green">
           {eyebrow}

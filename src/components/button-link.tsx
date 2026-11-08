@@ -7,10 +7,10 @@ type ButtonLinkProps = ComponentProps<typeof Link> & {
 
 const variants = {
   primary:
-    "border-pink/70 bg-[linear-gradient(135deg,var(--pink),var(--violet)_52%,var(--cyan))] text-foreground shadow-[0_18px_54px_rgba(240,24,159,0.28)] hover:shadow-[0_20px_70px_rgba(87,217,255,0.28)]",
+    "border-[#0B1B33] bg-[#0B1B33] text-white shadow-[0_10px_28px_rgba(11,27,51,0.16)] hover:border-[#0E7490] hover:bg-[#0E7490] hover:shadow-[0_12px_32px_rgba(14,116,144,0.2)]",
   secondary:
-    "border-line bg-white/[0.055] text-foreground hover:border-cyan/50 hover:bg-white/[0.09]",
-  ghost: "border-transparent text-muted hover:text-foreground",
+    "border-line bg-panel-strong text-foreground hover:border-cyan/50 hover:bg-[#E6F9FD]",
+  ghost: "border-transparent text-[#0E7490] hover:text-foreground",
 };
 
 export function ButtonLink({

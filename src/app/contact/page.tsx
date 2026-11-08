@@ -66,7 +66,7 @@ export default function ContactPage() {
                       {item.value}
                     </p>
                   </div>
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.055] text-cyan transition group-hover:border-pink/35 group-hover:text-pink">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-line bg-[#E6F9FD] text-[#0E7490] transition group-hover:border-cyan/50">
                     <Icon size={21} />
                   </span>
                 </div>
@@ -75,7 +75,7 @@ export default function ContactPage() {
           })}
         </div>
 
-        <div className="mt-8 rounded-[2rem] border border-white/12 bg-white/[0.04] p-7">
+        <div className="mt-8 rounded-[2rem] border border-line bg-panel-strong p-7">
           <p className="font-mono text-xs uppercase text-amber">Privacy note</p>
           <p className="mt-3 max-w-3xl leading-8 text-muted">
             This website does not include a project/contact form and does not

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Inter, Space_Grotesk } from "next/font/google";
+import { IBM_Plex_Mono, Inter } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
@@ -9,12 +9,6 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nexs.tudio";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-display",
   display: "swap",
 });
 
@@ -66,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${ibmPlexMono.variable}`}
+      className={`${inter.variable} ${ibmPlexMono.variable}`}
     >
       <body className="flex min-h-screen flex-col antialiased">
         <SiteHeader />
