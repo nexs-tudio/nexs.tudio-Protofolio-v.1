@@ -2,7 +2,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   CheckCircle2,
-  ClipboardCheck,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -431,87 +430,91 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-shell py-20 md:py-28">
-          <SectionHeading
-            compact
-            eyebrow="Packages"
-            title="Make pricing feel clear without locking every project."
-          />
-          <div className="grid gap-4 lg:grid-cols-3">
-            {pricingPackages.map((plan) => (
-              <Reveal key={plan.name}>
-                <article
-                  className={
-                    plan.featured
-                    ? "neon-surface relative overflow-hidden rounded-[2rem] border-cyan/35 bg-[linear-gradient(145deg,#E6F9FD,#FFFFFF_58%)] p-7"
-                      : "rounded-[2rem] border border-line bg-white p-7 transition hover:-translate-y-1 hover:border-cyan/50 hover:shadow-[0_12px_32px_rgba(11,27,51,0.07)]"
-                  }
-                >
+      <section className="section-shell py-16 md:py-24">
+        <SectionHeading
+          compact
+          eyebrow="Packages"
+          title="A clear starting point for every build."
+          body="Choose the scope that best fits your next step. Every quote is tailored to your goals, requirements, and timeline."
+          animateTitle
+          titleClassName="text-2xl md:text-4xl"
+          bodyClassName="mt-4 text-sm leading-7 md:text-base"
+        />
+        <div className="grid items-stretch gap-4 lg:grid-cols-3">
+          {pricingPackages.map((plan, index) => (
+            <Reveal key={plan.name} className="h-full">
+              <article
+                className={`group relative flex h-full min-h-[400px] flex-col overflow-hidden rounded-[1.75rem] border p-6 transition duration-300 hover:-translate-y-1 md:p-7 ${
+                  plan.featured
+                    ? "border-[#0E7490]/30 bg-[linear-gradient(155deg,#F0FBFD,#FFFFFF_60%)] shadow-[0_16px_40px_rgba(14,116,144,0.12)]"
+                    : "border-line bg-white shadow-[0_8px_24px_rgba(11,27,51,0.045)] hover:border-[#0E7490]/35 hover:shadow-[0_16px_36px_rgba(11,27,51,0.09)]"
+                }`}
+              >
+                {plan.featured ? (
+                  <>
+                    <span className="absolute inset-x-7 top-0 h-0.5 bg-gradient-to-r from-[#0E7490] via-[#22D3EE] to-[#0E7490]" />
+                    <span className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#22D3EE]/10 blur-3xl transition-opacity group-hover:opacity-80" />
+                  </>
+                ) : null}
+                <div className="relative flex items-center justify-between gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-[#F4F8FB] px-2.5 py-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-dim">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#E6F9FD] text-[9px] text-[#0E7490]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    Package
+                  </span>
                   {plan.featured ? (
-                    <p className="absolute right-5 top-5 rounded-full border border-cyan/40 bg-[#E6F9FD] px-3 py-1.5 font-mono text-[11px] uppercase text-pink">
-                      recommended
-                    </p>
+                    <span className="rounded-full border border-[#0E7490]/20 bg-white/90 px-2.5 py-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-[#0E7490] shadow-sm">
+                      Recommended
+                    </span>
                   ) : null}
-                  <h3 className="text-2xl font-extrabold">{plan.name}</h3>
-                  <p className="mt-4 text-3xl font-extrabold text-foreground">{plan.price}</p>
-                  <p className="mt-4 leading-7 text-muted">{plan.summary}</p>
-                  <ul className="mt-6 grid gap-3">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex gap-3 text-sm text-muted">
-                        <CheckCircle2 className="mt-0.5 shrink-0 text-green" size={17} />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                </div>
+                <h3 className="relative mt-5 text-2xl font-bold tracking-tight text-foreground">
+                  {plan.name}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-muted">
+                  {plan.summary}
+                </p>
+                <div className="mt-5 rounded-xl border border-line/80 bg-white/80 px-4 py-3.5">
+                  <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-dim">
+                    Investment
+                  </p>
+                  <p className="mt-1 text-base font-bold text-[#0E7490]">
+                    {plan.price}
+                  </p>
+                  <p className="mt-1 text-[11px] leading-5 text-dim">
+                    Quoted to fit your project scope
+                  </p>
+                </div>
+                <ul className="mt-5 grid gap-3 border-t border-line pt-5">
+                  {plan.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-2.5 text-sm leading-5 text-muted"
+                    >
+                      <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#E6F9FD] text-[#0E7490]">
+                        <CheckCircle2 size={11} strokeWidth={2.5} aria-hidden="true" />
+                      </span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto pt-6">
                   <ButtonLink
                     href="/contact"
                     variant={plan.featured ? "primary" : "secondary"}
-                    className="mt-7 w-full"
+                    className="w-full"
                   >
                     Discuss {plan.name}
-                    <ArrowRight size={16} />
+                    <ArrowRight size={15} />
                   </ButtonLink>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-      </section>
-
-      <section className="section-shell py-20 md:py-28">
-        <div className="neon-surface overflow-hidden rounded-[2.4rem] p-7 md:p-10">
-          <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-pink/20 blur-3xl" />
-          <div className="absolute bottom-0 left-1/3 h-56 w-56 rounded-full bg-cyan/15 blur-3xl" />
-          <p className="mb-4 font-mono text-xs font-semibold uppercase text-green">
-            Start the conversation
-          </p>
-          <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
-            <div>
-              <h2 className="max-w-3xl text-4xl font-extrabold leading-[1.03] md:text-6xl">
-                Ready to turn the idea into a working system?
-              </h2>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-                Contact us directly by email, WhatsApp, phone, or LinkedIn. We
-                do not collect client project details through a website form.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3 text-sm text-muted">
-                {["Reply with next steps", "Scope recommendation", "Budget fit check"].map((item) => (
-                  <span
-                    key={item}
-                    className="inline-flex items-center gap-2 rounded-full border border-line bg-panel-strong px-3 py-2"
-                  >
-                    <ClipboardCheck size={15} className="text-green" />
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <ButtonLink href="/contact">
-              View contact details
-              <ArrowRight size={17} />
-            </ButtonLink>
-          </div>
+                </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </section>
+
     </>
   );
 }
