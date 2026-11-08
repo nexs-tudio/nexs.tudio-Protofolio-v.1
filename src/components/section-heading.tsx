@@ -1,8 +1,13 @@
+import SplitText from "@/components/SplitText";
+
 type SectionHeadingProps = {
   eyebrow: string;
   title: string;
   body?: string;
   compact?: boolean;
+  animateTitle?: boolean;
+  titleClassName?: string;
+  bodyClassName?: string;
 };
 
 export function SectionHeading({
@@ -10,6 +15,9 @@ export function SectionHeading({
   title,
   body,
   compact = false,
+  animateTitle = false,
+  titleClassName = "text-4xl md:text-6xl",
+  bodyClassName = "text-base leading-8 md:text-lg",
 }: SectionHeadingProps) {
   return (
     <div
@@ -20,14 +28,38 @@ export function SectionHeading({
       }
     >
       <div>
-        <p className="mb-4 font-mono text-xs font-semibold uppercase text-green">
+        <p className="mb-3 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-green">
           {eyebrow}
         </p>
-        <h2 className="max-w-4xl text-4xl font-extrabold leading-[1.03] text-foreground md:text-6xl">
-          {title}
+        <h2
+          className={`max-w-4xl font-extrabold leading-[1.08] text-foreground ${titleClassName}`}
+        >
+          {animateTitle ? (
+            <SplitText
+              text={title}
+              className="font-display"
+              effect="rise"
+              splitType="words"
+              delay={80}
+              duration={0.85}
+              staggerFrom="start"
+              trigger="view"
+              hoverEffect="none"
+              loop={false}
+              mask={false}
+              threshold={0.1}
+              rootMargin="-80px"
+              textAlign="left"
+              tag="span"
+            />
+          ) : (
+            title
+          )}
         </h2>
       </div>
-      {body ? <p className="text-base leading-8 text-muted md:text-lg">{body}</p> : null}
+      {body ? (
+        <p className={`text-muted ${bodyClassName}`}>{body}</p>
+      ) : null}
     </div>
   );
 }

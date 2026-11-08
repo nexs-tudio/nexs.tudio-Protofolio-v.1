@@ -1,9 +1,11 @@
 import {
   ArrowRight,
+  ArrowUpRight,
   CheckCircle2,
   ClipboardCheck,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
 import { AudienceCards } from "@/components/audience-cards";
 import { Reveal } from "@/components/reveal";
@@ -162,56 +164,81 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-shell py-20 md:py-28">
-        <SectionHeading
-          eyebrow="What we build"
-          title="Choose a focused build track and get a working release."
-          body="Each offer is designed around a business outcome, not a vague list of features. Clients should understand what they are buying within seconds."
-        />
-        <div className="grid gap-5 md:grid-cols-2">
-          {services.map((service, index) => (
-            <Reveal key={service.slug}>
-              <article className="neon-surface group min-h-[360px] rounded-[2rem] p-7 transition duration-300 hover:-translate-y-2">
-                <div className="flex items-start justify-between gap-5">
-                  <div className="h-px w-16 bg-[linear-gradient(90deg,var(--green),transparent)]" />
-                  <span className="font-mono text-sm text-amber">
+      <section className="section-shell py-16 md:py-24">
+        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+          <div className="flex flex-col items-start lg:sticky lg:top-32 lg:self-start">
+            <p className="mb-3 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-green">
+              What we build
+            </p>
+            <h2 className="max-w-md text-3xl font-extrabold leading-[1.08] tracking-tight text-foreground md:text-4xl">
+              <SplitText
+                text="Software built around your next step."
+                className="font-display"
+                effect="rise"
+                splitType="words"
+                delay={80}
+                duration={0.85}
+                staggerFrom="start"
+                trigger="view"
+                hoverEffect="none"
+                loop={false}
+                mask={false}
+                threshold={0.1}
+                rootMargin="-80px"
+                textAlign="left"
+                tag="span"
+              />
+            </h2>
+            <p className="mt-4 max-w-md text-sm leading-7 text-muted md:text-base">
+              Practical software services, shaped around your business goals
+              and the next useful release.
+            </p>
+            <ButtonLink href="/contact" className="mt-6">
+              Discuss your project
+              <ArrowRight size={16} />
+            </ButtonLink>
+          </div>
+
+          <div className="divide-y divide-line border-y border-line">
+            {services.map((service, index) => (
+              <Reveal key={service.slug}>
+                <Link
+                  href="/services"
+                  className="group grid gap-4 py-6 outline-none transition-colors focus-visible:bg-[#F4F8FB]/70 sm:grid-cols-[48px_minmax(0,1fr)_auto] sm:items-start sm:gap-5 md:py-7"
+                >
+                  <span className="pt-1 font-mono text-xs tracking-[0.12em] text-dim">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                </div>
-                <p className="mt-8 font-mono text-xs uppercase text-green">
-                  {service.eyebrow}
-                </p>
-                <h3 className="mt-3 text-3xl font-extrabold">{service.title}</h3>
-                <p className="mt-4 leading-7 text-muted">{service.details}</p>
-                <ul className="mt-6 grid gap-2">
-                  {service.outcomes.slice(0, 3).map((outcome) => (
-                    <li key={outcome} className="flex gap-3 text-sm text-muted">
-                      <CheckCircle2 className="mt-0.5 shrink-0 text-green" size={16} />
-                      {outcome}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-7 flex flex-wrap gap-2">
-                  {service.stack.slice(0, 3).map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-line bg-panel-strong px-3 py-1.5 font-mono text-[11px] text-dim transition group-hover:border-cyan/50 group-hover:text-muted"
-                    >
-                      {item}
+                  <span className="min-w-0">
+                    <span className="block font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-green">
+                      {service.eyebrow}
                     </span>
-                  ))}
-                </div>
-                <ButtonLink
-                  href="/services"
-                  variant="ghost"
-                  className="mt-7 min-h-0 px-0 text-sm text-green hover:text-foreground"
-                >
-                  Explore track
-                  <ArrowRight size={15} />
-                </ButtonLink>
-              </article>
-            </Reveal>
-          ))}
+                    <span className="mt-1.5 block text-lg font-bold tracking-tight text-foreground transition-colors group-hover:text-[#0E7490] sm:text-xl">
+                      {service.title}
+                    </span>
+                    <span className="mt-2 block max-w-2xl text-sm leading-6 text-muted">
+                      {service.summary}
+                    </span>
+                    <span className="mt-3 flex flex-wrap gap-2">
+                      {service.stack.slice(0, 3).map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full border border-line bg-white px-2.5 py-1 font-mono text-[10px] text-dim transition-colors group-hover:border-cyan/40"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </span>
+                  </span>
+                  <ArrowUpRight
+                    className="hidden text-dim transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#0E7490] sm:mt-1 sm:block"
+                    size={19}
+                    aria-hidden="true"
+                  />
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
