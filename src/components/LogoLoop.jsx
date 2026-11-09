@@ -1071,7 +1071,7 @@ export const LogoLoop = memo(
       className
     ]
       .filter(Boolean)
-      .join('');
+      .join(' ');
 
     return (
       <div

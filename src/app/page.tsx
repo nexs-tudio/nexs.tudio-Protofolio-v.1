@@ -3,7 +3,6 @@ import {
   ArrowUpRight,
   CheckCircle2,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
 import { AudienceCards } from "@/components/audience-cards";
@@ -74,16 +73,6 @@ export default function Home() {
             <div className="relative flex min-h-[220px] items-center justify-center text-center sm:min-h-[280px] md:min-h-[320px] lg:min-h-[350px]">
               <div className="hero-orbit left-1/2 top-1/2 h-[210px] w-[210px] -translate-x-1/2 -translate-y-1/2 sm:h-[280px] sm:w-[280px] md:h-[340px] md:w-[340px] lg:h-[410px] lg:w-[410px]" />
               <div className="hero-orbit left-1/2 top-1/2 h-[145px] w-[145px] -translate-x-1/2 -translate-y-1/2 sm:h-[190px] sm:w-[190px] md:h-[240px] md:w-[240px] lg:h-[270px] lg:w-[270px]" />
-              <div className="logo-object absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 opacity-80 sm:top-[40%] lg:top-[42%]">
-                <Image
-                  src="/assets/nexstudio_icon_no_dot.png"
-                  alt="nexs.tudio N mark"
-                  width={320}
-                  height={320}
-                  priority
-                  className="h-24 w-24 object-contain sm:h-36 sm:w-36 md:h-52 md:w-52 lg:h-64 lg:w-64"
-                />
-              </div>
               <div className="relative z-10 w-full">
                 <p className="mb-4 font-mono text-[11px] uppercase text-green sm:mb-5 sm:text-xs">
                   build / ship / scale

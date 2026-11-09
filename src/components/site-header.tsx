@@ -85,7 +85,7 @@ export function SiteHeader() {
           <Link
             href="/contact"
             onClick={() => setOpenFromPath(null)}
-            className="inline-flex h-10 items-center gap-2 rounded-md bg-[#0B1B33] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#0E7490] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE] sm:px-5"
+            className="inline-flex h-11 items-center gap-2 rounded-md bg-[#0B1B33] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#0E7490] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE] sm:px-5"
           >
             <span className="hidden sm:inline">Start a project</span>
             <span className="sm:hidden">Contact</span>
@@ -93,7 +93,7 @@ export function SiteHeader() {
           </Link>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#D9E4EC] bg-white text-[#0B1B33] transition-colors hover:border-[#22D3EE] hover:bg-[#E6F9FD] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0E7490] lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-[#D9E4EC] bg-white text-[#0B1B33] transition-colors hover:border-[#22D3EE] hover:bg-[#E6F9FD] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0E7490] lg:hidden"
             aria-controls="mobile-primary-navigation"
             aria-expanded={isOpen}
             aria-label={isOpen ? "Close navigation" : "Open navigation"}
